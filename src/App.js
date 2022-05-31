@@ -1,16 +1,31 @@
 import React from "react";
 import CardList from "./CardList";
+import SearchBox from './SearchBox';
 import { robots } from './robots';
 
-const App = (props) => {
-    return (
-        <div>
-            <h1>RoboFriends</h1>
+class App extends React.Component {
+    constructor(){
+        super()
+        this.state = {
+            robots: robots,
+            searchField: ''
+        }
+    }
+
+    onSearchChange(event){
+        console.log(event.target.value)
+    }
+
+    render() {
+        return (
+            <div className='tc'>
+                <h1>RoboFriends</h1>
+                <SearchBox searchChange={this.onSearchChange}/>
+                <hr/>
+                <CardList robots={this.state.robots}/>
+            </div>
             
-            <hr/>
-            <CardList robots={robots}/>
-        </div>
-        
-    );
+        );
+    }
 }
 export default App;
