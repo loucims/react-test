@@ -37,6 +37,9 @@ class App extends React.Component {
         return (
             <div className='tc'>
                 <h1 className="white f1">RoboFriends</h1>
+                <div>
+                    <h3 className="white" style={{marginTop: '-20px'}}>Made by: Sebastian Loucim</h3>
+                </div>
                 <SearchBox searchChange={this.onSearchChange}/>
                 <hr/>
                 <Scroll>
